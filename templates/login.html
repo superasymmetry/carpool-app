@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Sign up for an account</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="" />
+  <link rel="icon" href="favicon.png">
+  <link rel="stylesheet" href="/static/styleform.css" />
+
+</head>
+
+<nav>
+  <ul>
+    <li>
+      <a class="links" href="{{ url_for ('views.home')}}">Home</a></li>
+    <li>
+      <a class="button" href="{{ url_for ('views.signin')}}">Login</a>
+    </li>
+  </ul>
+</nav>
+
+<body>
+
+  <h1>Sign up for an account</h1>
+  <div class="container">
+	<div>
+		<form action="#" method="POST">
+      <img src="/assets/avatarplaceholder.png">
+			<p>Username *</p>
+			<p><input type="text" placeholder="Enter Username" name="nm" required/></p>
+			<p>Password *</p>
+			<p><input type="password" placeholder="Enter Password" name="psw" required/></p>
+      <p>First Name *</p>
+			<p><input type="text" placeholder="Enter First Name" name="fname" required/></p>
+      <p>Last Name *</p>
+			<p><input type="text" placeholder="Enter Last Name" name="lname" required/></p>
+      <p>Telephone</p>
+			<p><input type="tel" placeholder="Enter Telephone" name="tel"/></p>
+      <p>Email *</p>
+			<p><input type="email" placeholder="Enter Email" name="eml" required/></p>
+      <p>Area of residence/carpool location *</p>
+			<p><input type="text" placeholder="Only put an approximate address" name="res" required/></p>
+			<p><input class="submitButton" type="submit"/></p>
+			<a href="/signin" style="color: #AACCCC;">Have an account already? Login</button>
+		</form>
+	</div>
+  </div>
+</body>
+</html>

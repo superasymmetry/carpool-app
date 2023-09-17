@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Hello, world!</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="" />
+  <link rel="icon" href="favicon.png">
+  <link rel="stylesheet" href="/static/styleform.css" />
+
+</head>
+
+<nav>
+  <ul>
+    <li>
+      <a class="links" href="{{ url_for ('views.home')}}">Home</a></li>
+    <li>
+      <a class="button" href="{{ url_for ('views.signin')}}">Login</a>
+    </li>
+  </ul>
+</nav>
+
+<body>
+
+  <h1>Sign in to your account</h1>
+  <div class="container">
+	<div>
+		<form action="#" method="POST">
+			<p>Username:</p>
+			<p><input type="text" placeholder="Enter Username" name="nm"/></p>
+			<p>Password:</p>
+			<p><input type="password" placeholder="Enter Password" name="psw"/></p>
+      <p><input class="submitButton" type="submit"/>Login</p>
+			<a href="/login" style="color: #AACCCC;">Don't have an account? Sign up</button>
+		</form>
+	</div>
+  </div>
+</body>
+</html>

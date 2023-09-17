@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible"
+		content="IE=edge">
+	<meta name="viewport"
+		content="width=device-width,
+				initial-scale=1.0">
+	<title>Dashboard</title>
+	<link rel="stylesheet"
+		href="/static/profile.css">
+	<!-- <link rel="stylesheet"
+		href="responsive.css"> -->
+    <script src="/static/dashboard.js" defer></script>
+    
+</head>
+
+<body>
+
+	<!-- for header part -->
+	<header>
+
+		<div class="logosec">
+			<div class="logo">Appleby Carpool</div>
+			<img src=
+"https://media.geeksforgeeks.org/wp-content/uploads/20221210182541/Untitled-design-(30).png"
+				class="icn menuicn"
+				id="menuicn"
+				alt="menu-icon">
+		</div>
+
+		<div>
+			<h1>Customize Profile</h1>
+		</div>
+
+		<div class="message">
+			<div class="circle"></div>
+			<img src=
+"https://media.geeksforgeeks.org/wp-content/uploads/20221210183322/8.png"
+				class="icn"
+				alt="">
+			<div class="dp">
+			<img src=
+"https://media.geeksforgeeks.org/wp-content/uploads/20221210180014/profile-removebg-preview.png"
+					class="dpicn"
+					alt="dp">
+			</div>
+		</div>
+
+	</header>
+
+	<div class="main-container">
+		<div class="navcontainer">
+			<nav class="nav">
+				<div class="nav-upper-options">
+					<div class="nav-option option5">
+						<img src=
+"https://media.geeksforgeeks.org/wp-content/uploads/20221210182148/Untitled-design-(29).png"
+							class="nav-img"
+							alt="dashboard">
+						<a class="button" id ="side_nav" href="{{ url_for ('views.dashboard')}}"><h3>Dashboard</h3></a>
+					</div>
+
+					<div class="nav-option option4">
+						<img src=
+"https://media.geeksforgeeks.org/wp-content/uploads/20221210183321/6.png"
+							class="nav-img"
+							alt="institution">
+							<a class="button" id ="side_nav" href="{{ url_for ('views.my_institution')}}"><h3>Institution</h3></a>
+					</div>
+
+					<div class="nav-option option1">
+						<img src=
+"https://media.geeksforgeeks.org/wp-content/uploads/20221210183323/10.png"
+							class="nav-img"
+							alt="blog">
+                        <h3>Profile</h3>
+					</div>
+
+					<div class="nav-option option6">
+						<img src=
+"https://media.geeksforgeeks.org/wp-content/uploads/20221210183320/4.png"
+							class="nav-img"
+							alt="settings">
+                        <a class="button" id ="side_nav" href="{{ url_for ('views.settings')}}"><h3>Settings</h3></a>
+					</div>
+
+					<div class="nav-option logout">
+                        
+						<img src=
+"https://media.geeksforgeeks.org/wp-content/uploads/20221210183321/7.png"
+							class="nav-img" href="{{ url_for('views.logout')}}"
+							alt="logout">
+						<h3></h3>
+                        <a class="button" id ="side_nav" href="{{ url_for ('views.logout')}}"><h3>Logout</h3></a>
+					</div>
+
+				</div>
+			</nav>
+		</div>
+		<div class="main">
+
+			
+
+			<div class="box-container">
+
+				<div class="box box1" style="width: 40%; height: 90%;">
+					<div class="text">
+						<div class="column left"><img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210180014/profile-removebg-preview.png" style="width:100px;height:100px;">
+							<h4 class="text-right">Profile Settings</h4>
+						</div>
+					</div>
+
+				</div>
+
+				<div class="box box2" style="width: 40%; height: 90%;">
+					<div class="text">
+						<form action="#" method="POST" style="width: 100%;padding: 12px 20px;margin: 8px 0;display: inline-block;border: 1px solid #ccc;box-sizing: border-box;">
+							<p>Name</p>
+							<p><input type="text" placeholder="Enter First Name" name="nam"/></p>
+							<p>Name</p>
+							<p><input type="text" placeholder="Enter Last Name" name="nam"/></p>
+							<p>Telephone</p>
+							<p><input type="text" placeholder="Enter Telephone" name="tel"/></p>
+							<p>Email address</p>
+							<p><input type="email" placeholder="Enter Email" name="eml"/></p>
+							<p>Area of residence</p>
+							<p><input type="text" placeholder="Can just be preferred area to carpool" name="res"/></p>
+							
+							<p><input class="submitButton" type="submit"/></p>
+						</form>
+					</div>
+
+					<div class="box box1" style="width: 40%; height: 90%;">
+						<div class="text">
+							<div class="column left"><img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210180014/profile-removebg-preview.png" style="width:100px;height:100px;">
+								<h4 class="text-right">Profile Settings</h4>
+							</div>
+					</div>
+
+				</div>
+
+			<!-- <div class="box-container">
+                <div class="row">
+                    <div class="column left"><img src="assets/avatarplaceholder.png" style="width:100px;height:100px;">
+                        <h4 class="text-right">Profile Settings</h4>
+                    </div>
+                    <div class="column right">
+                        <div>
+                            <form action="#" method="POST">
+                                <p>Name</p>
+                                <p><input type="text" placeholder="Enter First Name" name="nam"/></p>
+								<p>Name</p>
+                                <p><input type="text" placeholder="Enter Last Name" name="nam"/></p>
+                                <p>Telephone</p>
+                                <p><input type="text" placeholder="Enter Telephone" name="tel"/></p>
+                                <p>Email address</p>
+                                <p><input type="email" placeholder="Enter Email" name="eml"/></p>
+                                <p>Area of residence</p>
+                                <p><input type="text" placeholder="Can just be preferred area to carpool" name="res"/></p>
+                                
+                                <p><input class="submitButton" type="submit"/>Login</p>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+			</div> -->
+            <style>
+                .row {
+                display: flex;
+                }
+
+                .column {
+                flex: 50%;
+                }
+            </style>
+	    </div>
+    </div>
+
+	<script src="./index.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    <title>Appleby Carpool</title>
+    <meta charset="utf-8" />
+	  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+	  <!-- link the webpage's stylesheet -->
+	  <link rel="stylesheet" href="/static/stylehomepage.css" />
+
+	  <!-- link the webpage's JavaScript file -->
+	  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="/script.js" defer></script>
+
+  </head>
+
+  <nav>
+    <ul>
+      <li>
+        <a class="links" href="{{ url_for ('views.home')}}">Home</a></li>
+      <li>
+        <a class="button" href="{{ url_for ('views.signin')}}">Login</a>
+      </li>
+    </ul>
+  </nav>
+  
+  <body>
+    <div class="landing">
+      <div class="landing_par">
+        <h1>Carpooling, </h1>
+        <h1>Reimagined.</h1>
+        <h1 style="width: 60%; font-size:20px; font-weight: normal;">Here, we contribute to the environment by helping you reduce your carbon footprint from transportation.</p>
+        <a class = "button" href="{{ url_for ('views.signin')}}" style="width: 10px; height: 10px;">Try Demo</a>
+      </div>
+
+      <!-- <div class="landing_par">
+        <img id="photo" src="https://www.pngmart.com/files/11/Technology-Transparent-Background.png">
+      </div> -->
+
+        
+      <!-- <div class="float-child">
+        <img id="photo" src="https://ts1.cn.mm.bing.net/th/id/R-C.ccb5760430812237ade4c1da811ae3cd?rik=USx2hIUDf%2fAW%2fQ&pid=ImgRaw&r=0" alt="Image of data analytics">
+      </div> -->
+    </div>
+
+    <!-- <div class="float-container">
+
+      <div class="float-child">
+        <div class="green">Float Column 1</div>
+      </div>
+      
+      <div class="float-child">
+        <div class="blue">Float Column 2</div>
+      </div>
+      
+    </div> -->
+
+    <!-- <section>
+    <p>Hi, welcome to Appleby Carpool!
+    </p>
+    <p>Here, we contribute to the environment by helping you reduce your carbon footprint from transportation.</p>
+
+      <button type="button">
+        <a href="{{ url_for ('views.signin')}}">Try Demo</a></button>
+    </section> -->
+        
+  <footer class="footer">
+    <div class="waves">
+      <div class="wave" id="wave1"></div>
+      <div class="wave" id="wave2"></div>
+      <div class="wave" id="wave3"></div>
+      <div class="wave" id="wave4"></div>
+    </div>
+
+    <ul class="menu">
+      <li class="menu__item"><a class="menu__link" href="#">Home</a></li>
+      <li class="menu__item"><a class="menu__link" href="#">About</a></li>
+      <li class="menu__item"><a class="menu__link" href="#">Services</a></li>
+      <li class="menu__item"><a class="menu__link" href="#">Team</a></li>
+      <li class="menu__item"><a class="menu__link" href="#">Contact</a></li>
+
+    </ul>
+    <p1>&copy;2023 by Binder. All rights reserved.</p1>
+  </footer>
+
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  
+  </body>
+</html>

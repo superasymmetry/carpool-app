@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible"
+		content="IE=edge">
+	<meta name="viewport"
+		content="width=device-width,
+				initial-scale=1.0">
+	<title>Dashboard</title>
+	<link rel="stylesheet" href="/static/style.css">
+	<!-- <link rel="stylesheet"
+		href="responsive.css"> -->
+    <script src="/static/dashboard.js" defer></script>
+    
+</head>
+
+<body>
+
+	<!-- for header part -->
+	<header>
+
+		<div class="logosec">
+			<div class="logo">Appleby Carpool</div>
+			<img src=
+"https://media.geeksforgeeks.org/wp-content/uploads/20221210182541/Untitled-design-(30).png"
+				class="icn menuicn"
+				id="menuicn"
+				alt="menu-icon">
+		</div>
+
+		<div>
+			<h1>View Members</h1>
+		</div>
+		<div class="message">
+			<div class="circle"></div>
+			<img src=
+"/assets/avatarplaceholder.png"
+				class="icn"
+				alt="">
+			<div class="dp">
+			<img src=
+"https://media.geeksforgeeks.org/wp-content/uploads/20221210180014/profile-removebg-preview.png"
+					class="dpicn"
+					alt="dp">
+			</div>
+		</div>
+
+	</header>
+
+	<div class="main-container">
+		<div class="navcontainer">
+			<nav class="nav">
+				<div class="nav-upper-options">
+					<div class="nav-option option4">
+						<img src=
+"https://media.geeksforgeeks.org/wp-content/uploads/20221210182148/Untitled-design-(29).png"
+							class="nav-img"
+							alt="dashboard">
+                        <a class="button" id ="side_nav" href="{{ url_for ('views.dashboard')}}"><h3>Dashboard</h3></a>
+					</div>
+
+					<div class="nav-option option1">
+						<img src=
+"https://media.geeksforgeeks.org/wp-content/uploads/20221210183321/6.png"
+							class="nav-img"
+							alt="institution">
+							<h3>Institution</h3>
+					</div>
+
+					<div class="nav-option option5">
+						<img src=
+"https://media.geeksforgeeks.org/wp-content/uploads/20221210183323/10.png"
+							class="nav-img"
+							alt="blog">
+                        <a class="button" id ="side_nav" href="{{ url_for ('views.editProfile')}}"><h3> Profile</h3></a>
+					</div>
+
+					<div class="nav-option option6">
+						<img src=
+"https://media.geeksforgeeks.org/wp-content/uploads/20221210183320/4.png"
+							class="nav-img"
+							alt="settings">
+                        <a class="button" id ="side_nav" href="{{ url_for ('views.settings')}}"><h3> Settings</h3></a>
+					</div>
+
+					<div class="nav-option logout">
+                        
+						<img src=
+"https://media.geeksforgeeks.org/wp-content/uploads/20221210183321/7.png"
+							class="nav-img" href="{{ url_for('views.logout')}}"
+							alt="logout">
+                        <a class="button" id ="side_nav" href="{{ url_for ('views.logout')}}"><h3> Logout</h3></a>
+					</div>
+
+				</div>
+			</nav>
+		</div>
+		<div class="main">
+			
+			
+			<div class="report-container" style="height: 100%;">
+				<div class="report-header">All Users</h1>
+					<h1 class="recent-Articles">Appleby College</h1>
+                    <button class="view">View All</button>
+				</div>
+
+				<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names..">
+
+				<script>
+					function myFunction() {
+					  // Declare variables
+					  var input, filter, table, tr, td, i, txtValue;
+					  input = document.getElementById("myInput");
+					  filter = input.value.toUpperCase();
+					  table = document.getElementById("myTable");
+					  tr = table.getElementsByTagName("tr");
+					
+					  // Loop through all table rows, and hide those who don't match the search query
+					  for (i = 0; i < tr.length; i++) {
+						td = tr[i].getElementsByTagName("td")[0];
+						if (td) {
+						  txtValue = td.textContent || td.innerText;
+						  if (txtValue.toUpperCase().indexOf(filter) > -1) {
+							tr[i].style.display = "";
+						  } else {
+							tr[i].style.display = "none";
+						  }
+						}
+					  }
+					}
+					</script>
+					
+
+				{% block content %}
+				<table class='table' style="padding-top: 15px;">
+					<tr class="header" style="align-content: left;">
+					  <th style="width:15%;">User</th>
+					  <th style="width:10%;">First Name</th>
+					  <th style="width:10%;">Last Name</th>
+					  <th style="width:30%;">Area of Residence</th>
+					  <th style="width:15%;">Phone Number</th>
+					  <th style="width:15%;">Email</th>
+
+					</tr>
+
+					{% for row in people %}
+					<tr>
+						{% for cell in row %}
+						<td>{{cell}}</td>
+						{% endfor %}
+					</tr>
+					{% endfor %}
+				  </table>
+				{% endblock %}
+			
+			</div>
+
+
+			<!-- <script>
+				//generate <divs>
+				const div = documment.createElement("div");
+				const text = 'hi there!';
+				const divContent = document.createTextNode(text);
+				div.appendChild(divContent);
+				document.body.appendChild(div);
+				//set style
+				div.style.border = '1px solid green';
+				div.style.padding = '4px';
+			</script> -->
+	
+</body>
+</html>
