@@ -1,32 +1,4 @@
-/* STYLE SECTIONING TAGS */
-body, html {
-    background-color: black;
-    height: 100%;
-    text-align: center;
-  }
-  
-  /* STYLE TEXT */
-  .portfolio{
-    text-align: center;
-    color: #AACCCC;
-  }
-  
-  h1 {
-    color: #AACCCC;
-    font-family: verdana;
-    font-size: 70px;
-    text-align: left;
-  }
-  
-  /* STYLE IMAGES */
-  
-  #photo{
-    max-width: 50%;
-    border-radius: 50%;
-    border-radius: 15px;
-    border: 2px solid #AACCCC;
-    padding: 15px;
-  }
+
   
   /* STYLE NAV BAR */
   ul {
@@ -38,7 +10,16 @@ body, html {
     height: 50px;
   }
   
-  .button{border-radius: 20px; width: 20%; background-color:#AACCCC;color:#112A46;float: right;text-decoration-thickness: 0%;}
+  /* .button{border-radius: 20px; width: 20%; background-color: #007bff;color:#112A46;float: right;text-decoration-thickness: 0%;} */
+  .button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    float: right;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+  }
   .links{float:left;text-decoration-thickness: 0%;}
   
   li {
@@ -57,222 +38,225 @@ body, html {
     background-color: white;
   }
   
-  p {
-    font-family: verdana;
-    font-size: 20px;
-    color:#AACCCC;
-    text-align: left;
-  }
   
-  footer {
-    background-color: #112A46;
-  }
 
-  .landing_par {
-    width: 80%;
-    height: auto;
-    text-align: left;
-    align-content: left;
-    padding:0%;
-  }
+/* bottom sections */
+/* ... (previous styles) */
 
-  .p1{
-    font-size: 20px;
-    align-content: left;
-    float: left;
-  }
+.section-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #333;
+}
 
-  .landing {
-    /* background-image: url("https://ts1.cn.mm.bing.net/th/id/R-C.e79cc093e114c74b776c05c2dba32ec1?rik=5fGV5v0qZEiZUA&riu=http%3a%2f%2fwww.wallpapers4u.org%2fwp-content%2fuploads%2fwavy_lines_background_smoke_veil_20050_1920x1080.jpg&ehk=KHQVTdpvITtVNWh4XRWPvmhzIhOaPSStW8JkUvbip%2fw%3d&risl=&pid=ImgRaw&r=0"); */
-    background-image: url("/assets/background.png");
-    background-size: 100%;
-    /* align-content: left; */
-    display: flex;
-  }
+.about-section {
+  padding: 50px 0;
+  background-color: #f9f9f9;
+}
 
+.about-content {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
 
-  body, html {
-    height: 100%;
-  }
-  
-  .parallax {
-    /* The image used */
-    background-image:url("https://ts1.cn.mm.bing.net/th/id/R-C.625d05ce5029f79bb949268b160ff37d?rik=HjT5RkYP1uw9ug&pid=ImgRaw&r=0");
-  
-    /* Full height */
-    height: 100%;
-  
-    /* Create the parallax scrolling effect */
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
-  
-  /* Bordered login form */
-  /*--------------------------*/
-  form {
-    border: 3px solid #AACCCC;
-  }
-  
-  /* Full-width inputs */
-  input[type=text], input[type=password] {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-  }
-  
-  /* Set a style for all buttons */
-  button {
-    background-color: #AACCCC;
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border:#AACCCC;
-    cursor: pointer;
-  }
-  
-  /* Add a hover effect for buttons */
-  button:hover {
-    opacity: 0.8;
-  }
-  
-  /* Extra style for the cancel button (red) */
-  .cancelbtn {
-    width: auto;
-    padding: 10px 18px;
-    background-color: #AACCCC;
-  }
-  
-  /* Center the avatar image inside this container */
-  .imgcontainer {
-    text-align: center;
-    margin: 24px 0 12px 0;
-  }
-  
-  /* Avatar image */
-  img.avatar {
-    width: 40%;
-    border-radius: 50%;
-  }
-  
-  /* Add padding to containers */
-  .container {
-    padding: 16px;
-  }
-  
-  /* The "Forgot password" text */
-  span.psw {
-    float: right;
-    padding-top: 16px;
-  }
-  
-  /* Change styles for span and cancel button on extra small screens */
-  @media screen and (max-width: 300px) {
-    span.psw {
-      display: block;
-      float: none;
-    }
-    .cancelbtn {
-      width: 100%;
-    }
-  }
-  
-  section {
-    display: block;
-    background-color: #1e497b;
-    padding-block: 60px;
-  }
+.about-content h3 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: #007bff;
+}
 
-  .col1, .col2{
-    background-color: #112A46;
-    padding-block-end: 40px;
+.about-content p {
+  font-size: 1rem;
+  color: #555;
+}
+
+/* ... (previous styles) */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+.navbar {
+  background-color: #333;
+  padding: 10px 0;
+}
+
+.nav-list {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-around;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #fff;
+  padding: 5px 15px;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.nav-link:hover {
+  background-color: #555;
+}
+
+.landing {
+  text-align: center;
+  padding: 100px 0;
+}
+
+.landing-content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.button1 {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.button1, .button:hover {
+  background-color: #0056b3;
+}
+
+.footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 20px 0;
+}
+
+.waves {
+  position: relative;
+  width: 100%;
+  height: 15px;
+  overflow: hidden;
+}
+
+.wave {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 15px;
+  background: repeating-linear-gradient(
+      -45deg,
+      transparent,
+      transparent 5px,
+      #fff 5px,
+      #fff 10px
+  );
+  animation: waveMove 3s infinite linear;
+}
+
+@keyframes waveMove {
+  100% {
+      transform: translateX(-100%);
   }
-  
-  button {
-    border: none;
-    color: white;
-    padding: 16px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    transition-duration: 0.4s;
-    cursor: pointer;
-  }
-  
-  /*---------------------3RD SECTION----------------------------------*/
-  .tab {
-    overflow: hidden;
-    border: 1px solid #AACCCC;
-    background-color: #1e497b;
-  }
-  
-  /* Style the buttons that are used to open the tab content */
-  .tab button {
-    background-color: inherit;
-    float: left;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    padding: 14px 16px;
-    transition: 0.3s;
-  }
-  
-  /* Change background color of buttons on hover */
-  .tab button:hover {
-    background-color: #112A46;
-  }
-  
-  /* Create an active/current tablink class */
-  .tab button.active {
-    background-color: #AACCCC;
-  }
-  
-  /* Style the tab content */
-  .tabcontent {
-    display: none;
-    padding: 6px 12px;
-    border: 1px solid #AACCCC;
-    border-top: none;
-    animation: fadeEffect 1s; /* Fading effect takes 1 second */
-    font-family: verdana;
-    color: #AACCCC;
-  }
-  
-  /* Go from zero to full opacity */
-  @keyframes fadeEffect {
-    from {opacity: 0;}
-    to {opacity: 1;}
-  }
-  
-  /*----------------login page-----------------*/
-  label, .imgcontainer, input {
-    font-family: verdana;
-    color: #AACCCC;
-    border-radius: 20px;
-  }
-  
-  div, button {
-    padding-left: 30%;
-    padding-right: 30%;
-    border-radius: 20px;
-  }
-  
-  .parallax {
-    /* The image used */
-    background-image: url('/assets/notebook.png');
-  
-    /* Full height */
-    height: 80%; 
-  
-    /* Create the parallax scrolling effect */
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
+}
+
+/* ... (previous styles) */
+
+.icon-text {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.icon-text ion-icon {
+  margin-right: 10px;
+  font-size: 1.5rem;
+  color: #007bff;
+}
+
+/* ... (remaining styles) */
+
+/* ... (previous styles) */
+
+.about-section {
+  padding: 50px 0;
+  background-color: #f9f9f9;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.icon-text {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.icon-text ion-icon {
+  margin-right: 15px;
+  font-size: 2rem;
+  color: #007bff;
+}
+
+.about-content {
+  max-width: 800px;
+  margin-bottom: 30px;
+}
+
+.about-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+/* ... (remaining styles) */
+/* ... (previous styles) */
+.about-section {
+  padding: 50px 0;
+  background-color: #f9f9f9;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.about-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start; /* Adjusted alignment */
+  max-width: 1000px; /* Increased max-width */
+  margin-bottom: 30px;
+}
+
+.icon-text {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.icon-text ion-icon {
+  margin-right: 15px;
+  font-size: 2rem;
+  color: #007bff;
+}
+
+.about-info {
+  flex: 2; /* Increased flex value */
+  margin-right: 20px;
+}
+
+.about-image {
+  flex: 1; /* Decreased flex value */
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+/* ... (remaining styles) */
