@@ -1,306 +1,118 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Sign up for an account</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="" />
+  <link rel="icon" href="favicon.png">
+  <link rel="stylesheet" href="/static/styleform.css" />
+
+</head>
+
+<nav>
+  <ul>
+    <li>
+      <a class="links" href="{{ url_for ('views.home')}}">Home</a></li>
+    <li>
+      <a class="button" href="{{ url_for ('views.signin')}}">Login</a>
+    </li>
+  </ul>
+</nav>
+
+<body>
+
+  <h1>Sign up for an account</h1>
+  <div class="container">
+	<div>
+		<form action="#" method="POST">
+      <img src="/assets/avatarplaceholder.png">
+			<p>Username *</p>
+			<p><input type="text" placeholder="Enter Username" name="nm" required/></p>
+			<p>Password *</p>
+			<p><input type="password" placeholder="Enter Password" name="psw" required/></p>
+      <p>First Name *</p>
+			<p><input type="text" placeholder="Enter First Name" name="fname" required/></p>
+      <p>Last Name *</p>
+			<p><input type="text" placeholder="Enter Last Name" name="lname" required/></p>
+      <p>Telephone</p>
+			<p><input type="tel" placeholder="Enter Telephone" name="tel"/></p>
+      <p>Email *</p>
+			<p><input type="email" placeholder="Enter Email" name="eml" required/></p>
+      <p>Area of residence/carpool location *</p>
+			<p><input type="text" placeholder="Only put an approximate address" name="res" required/></p>
+			<p><input class="submitButton" type="submit"/></p>
+			<a href="/signin" style="color: #AACCCC;">Have an account already? Login</button>
+		</form>
+	</div>
+  </div>
+</body>
+</html> -->
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible"
-		content="IE=edge">
-	<meta name="viewport"
-		content="width=device-width,
-				initial-scale=1.0">
-	<title>Dashboard</title>
-	<link rel="stylesheet" href="/static/style.css">
-	<!-- <link rel="stylesheet"
-		href="responsive.css"> -->
-    <script src="/static/dashboard.js" defer></script>
-    <style>
-        /* Add inline styles here for consistency with previous pages */
-        body {
-            background-color: #cad7fda4;
-            max-width: 100%;
-            overflow-x: hidden;
-            font-family: "Poppins", sans-serif;
-            font-weight: 300;
-        }
-
-        header {
-            background-color: #112A46;
-            height: 70px;
-            width: 100vw;
-            padding: 0 30px;
-            position: fixed;
-            z-index: 100;
-            box-shadow: 1px 1px 15px rgba(161, 182, 253, 0.825);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 27px;
-            font-weight: 600;
-            color: #fff;
-        }
-
-        .icn {
-            height: 30px;
-        }
-
-        .menuicn {
-            cursor: pointer;
-        }
-
-        .logosec {
-            display: flex;
-            align-items: center;
-            gap: 60px;
-        }
-
-        .searchbar,
-        .message,
-        .logosec {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .searchbar2 {
-            display: none;
-        }
-
-        .searchbar input {
-            width: 250px;
-            height: 42px;
-            border-radius: 50px 0 0 50px;
-            background-color: #ededed;
-            padding: 0 20px;
-            font-size: 15px;
-            outline: none;
-            border: none;
-        }
-
-        .searchbtn {
-            width: 50px;
-            height: 42px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 0px 50px 50px 0px;
-            background-color: #007bff;
-            cursor: pointer;
-        }
-
-        .message {
-            gap: 40px;
-            position: relative;
-            cursor: pointer;
-        }
-
-        .circle {
-            height: 7px;
-            width: 7px;
-            position: absolute;
-            background-color: #fa7bb4;
-            border-radius: 50%;
-            left: 19px;
-            top: 8px;
-        }
-
-        .dp {
-            height: 40px;
-            width: 40px;
-            background-color: #626262;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-        }
-
-        .main-container {
-            display: flex;
-            width: 100vw;
-            position: relative;
-            top: 70px;
-            z-index: 1;
-        }
-
-        .main {
-            height: calc(100vh - 70px);
-            width: 100%;
-            overflow-y: scroll;
-            overflow-x: hidden;
-            padding: 40px 30px 30px 30px;
-            scrollbar-color: rgb(0, 0, 50) rgb(0, 0, 85);
-            scrollbar-width: thin;
-        }
-
-        .box-container {
-            display: flex;
-            justify-content: space-evenly;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 50px;
-        }
-
-        /* Add more inline styles for consistency */
-    </style>
-
+  <meta charset="UTF-8" />
+  <title>Sign up for an account | Carpool</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Sign up for a Carpool account." />
+  <link rel="icon" href="favicon.png">
+  <link rel="stylesheet" href="/static/styleform.css" />
 </head>
 
 <body>
+  <nav>
+    <ul>
+      <li>
+        <a class="links" href="{{ url_for ('views.home')}}">Home</a></li>
+      <li>
+        <a class="button" href="{{ url_for ('views.signin')}}">Login</a>
+      </li>
+    </ul>
+  </nav>
 
-	<!-- for header part -->
-	<header>
-
-		<div class="logosec">
-			<div class="logo">Company Dashboard</div>
-			<img src=
-"https://media.geeksforgeeks.org/wp-content/uploads/20221210182541/Untitled-design-(30).png"
-				class="icn menuicn"
-				id="menuicn"
-				alt="menu-icon">
-		</div>
-
-		<div>
-			<h1>View Members</h1>
-		</div>
-		<div class="message">
-			<div class="circle"></div>
-			<img src=
-"/assets/avatarplaceholder.png"
-				class="icn"
-				alt="">
-			<div class="dp">
-			<img src=
-"https://media.geeksforgeeks.org/wp-content/uploads/20221210180014/profile-removebg-preview.png"
-					class="dpicn"
-					alt="dp">
-			</div>
-		</div>
-
-	</header>
-
-	<div class="main-container">
-		<div class="navcontainer">
-			<nav class="nav">
-				<div class="nav-upper-options">
-					<div class="nav-option option4">
-						<img src=
-"https://media.geeksforgeeks.org/wp-content/uploads/20221210182148/Untitled-design-(29).png"
-							class="nav-img"
-							alt="dashboard">
-                        <a class="button" id ="side_nav" href="{{ url_for ('views.dashboard')}}"><h3>Dashboard</h3></a>
-					</div>
-
-					<div class="nav-option option1">
-						<img src=
-"https://media.geeksforgeeks.org/wp-content/uploads/20221210183321/6.png"
-							class="nav-img"
-							alt="institution">
-							<h3>Institution</h3>
-					</div>
-
-					<div class="nav-option option5">
-						<img src=
-"https://media.geeksforgeeks.org/wp-content/uploads/20221210183323/10.png"
-							class="nav-img"
-							alt="blog">
-                        <a class="button" id ="side_nav" href="{{ url_for ('views.editProfile')}}"><h3> Profile</h3></a>
-					</div>
-
-					<div class="nav-option option6">
-						<img src=
-"https://media.geeksforgeeks.org/wp-content/uploads/20221210183320/4.png"
-							class="nav-img"
-							alt="settings">
-                        <a class="button" id ="side_nav" href="{{ url_for ('views.settings')}}"><h3> Settings</h3></a>
-					</div>
-
-					<div class="nav-option logout">
-                        
-						<img src=
-"https://media.geeksforgeeks.org/wp-content/uploads/20221210183321/7.png"
-							class="nav-img" href="{{ url_for('views.logout')}}"
-							alt="logout">
-                        <a class="button" id ="side_nav" href="{{ url_for ('views.logout')}}"><h3> Logout</h3></a>
-					</div>
-
-				</div>
-			</nav>
-		</div>
-		<div class="main">
-			
-			
-			<div class="report-container" style="height: 100%;">
-				<div class="report-header">All Users</h1>
-					<h1 class="recent-Articles">Appleby College</h1>
-                    <button class="view">View All</button>
-				</div>
-
-				<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names..">
-
-				<script>
-					function myFunction() {
-					  // Declare variables
-					  var input, filter, table, tr, td, i, txtValue;
-					  input = document.getElementById("myInput");
-					  filter = input.value.toUpperCase();
-					  table = document.getElementById("myTable");
-					  tr = table.getElementsByTagName("tr");
-					
-					  // Loop through all table rows, and hide those who don't match the search query
-					  for (i = 0; i < tr.length; i++) {
-						td = tr[i].getElementsByTagName("td")[0];
-						if (td) {
-						  txtValue = td.textContent || td.innerText;
-						  if (txtValue.toUpperCase().indexOf(filter) > -1) {
-							tr[i].style.display = "";
-						  } else {
-							tr[i].style.display = "none";
-						  }
-						}
-					  }
-					}
-					</script>
-					
-
-				{% block content %}
-				<table class='table' style="padding-top: 15px;">
-					<tr class="header" style="align-content: left;">
-					  <th style="width:15%;">User</th>
-					  <th style="width:10%;">First Name</th>
-					  <th style="width:10%;">Last Name</th>
-					  <th style="width:30%;">Area of Residence</th>
-					  <th style="width:15%;">Phone Number</th>
-					  <th style="width:15%;">Email</th>
-
-					</tr>
-
-					{% for row in people %}
-						<tr>
-							{% for cell in row %}
-							<td>{{cell}}</td>
-							{% endfor %}
-						</tr>
-						{% endfor %}
-					</table>
-					{% endblock %}
-			
-			</div>
-
-
-			<!-- <script>
-				//generate <divs>
-				const div = documment.createElement("div");
-				const text = 'hi there!';
-				const divContent = document.createTextNode(text);
-				div.appendChild(divContent);
-				document.body.appendChild(div);
-				//set style
-				div.style.border = '1px solid green';
-				div.style.padding = '4px';
-			</script> -->
-	
+  <div class="signup-container">
+    <h1>Sign up for an account</h1>
+    <div class="form-container">
+      <form action="#" method="POST">
+        <div class="avatar-container">
+          <img src="/assets/avatarplaceholder.png" alt="Avatar" />
+        </div>
+        <div class="input-group">
+          <label for="username">Username *</label>
+          <input type="text" id="username" placeholder="Enter Username" name="nm" required />
+        </div>
+        <div class="input-group">
+          <label for="password">Password *</label>
+          <input type="password" id="password" placeholder="Enter Password" name="psw" required />
+        </div>
+        <div class="input-group">
+          <label for="firstName">First Name *</label>
+          <input type="text" id="firstName" placeholder="Enter First Name" name="fname" required />
+        </div>
+        <div class="input-group">
+          <label for="lastName">Last Name *</label>
+          <input type="text" id="lastName" placeholder="Enter Last Name" name="lname" required />
+        </div>
+        <div class="input-group">
+          <label for="telephone">Telephone</label>
+          <input type="tel" id="telephone" placeholder="Enter Telephone" name="tel" />
+        </div>
+        <div class="input-group">
+          <label for="email">Email *</label>
+          <input type="email" id="email" placeholder="Enter Email" name="eml" required />
+        </div>
+        <div class="input-group">
+          <label for="residence">Area of residence/carpool location *</label>
+          <input type="text" id="residence" placeholder="Only put an approximate address" name="res" required />
+        </div>
+        <div class="input-group">
+          <input class="submitButton" type="submit" value="Sign Up" />
+        </div>
+      </form>
+      <p class="signin-link"><a href="/signin">Have an account already? Login</a></p>
+    </div>
+  </div>
 </body>
+
 </html>
