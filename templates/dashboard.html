@@ -1,334 +1,104 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Hello, world!</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="" />
+  <link rel="icon" href="favicon.png">
+  <link rel="stylesheet" href="/static/styleform.css" />
+
+</head>
+
+<nav>
+  <ul>
+    <li>
+      <a class="links" href="{{ url_for ('views.home')}}">Home</a></li>
+    <li>
+      <a class="button" href="{{ url_for ('views.signin')}}">Login</a>
+    </li>
+  </ul>
+</nav>
+
+<body>
+
+  <h1>Sign in to your account</h1>
+  <div class="container">
+	<div>
+		<form action="#" method="POST">
+			<p>Username:</p>
+			<p><input type="text" placeholder="Enter Username" name="nm"/></p>
+			<p>Password:</p>
+			<p><input type="password" placeholder="Enter Password" name="psw"/></p>
+      <p><input class="submitButton" type="submit"/>Login</p>
+			<a href="/login" style="color: #AACCCC;">Don't have an account? Sign up</button>
+		</form>
+	</div>
+
+  {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+      <ul class="flashes">
+        {% for category, message in messages %}
+          <li class="{{ category }}">{{ message }}</li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+  {% endwith %}
+  </div>
+</body>
+</html> -->
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible"
-		content="IE=edge">
-	<meta name="viewport"
-		content="width=device-width,
-				initial-scale=1.0">
-	<title>Dashboard</title>
-	<link rel="stylesheet"
-		href="/static/profile.css">
-	<!-- <link rel="stylesheet"
-		href="responsive.css"> -->
-    <script src="/static/dashboard.js" defer></script>
-    <style>
-        /* Add inline styles here for consistency with previous pages */
-        body {
-            background-color: #cad7fda4;
-            max-width: 100%;
-            overflow-x: hidden;
-            font-family: "Poppins", sans-serif;
-            font-weight: 300;
-        }
-
-        header {
-            background-color: #112A46;
-            height: 70px;
-            width: 100vw;
-            padding: 0 30px;
-            position: fixed;
-            z-index: 100;
-            box-shadow: 1px 1px 15px rgba(161, 182, 253, 0.825);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 27px;
-            font-weight: 600;
-            color: #fff;
-        }
-
-        .icn {
-            height: 30px;
-        }
-
-        .menuicn {
-            cursor: pointer;
-        }
-
-        .logosec {
-            display: flex;
-            align-items: center;
-            gap: 60px;
-        }
-
-        .message {
-            gap: 40px;
-            position: relative;
-            cursor: pointer;
-        }
-
-        .circle {
-            height: 7px;
-            width: 7px;
-            position: absolute;
-            background-color: #fa7bb4;
-            border-radius: 50%;
-            left: 19px;
-            top: 8px;
-        }
-
-        .dp {
-            height: 40px;
-            width: 40px;
-            background-color: #626262;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-        }
-
-        .main-container {
-            display: flex;
-            width: 100vw;
-            position: relative;
-            top: 70px;
-            z-index: 1;
-        }
-
-        .main {
-            height: calc(100vh - 70px);
-            width: 100%;
-            overflow-y: scroll;
-            overflow-x: hidden;
-            padding: 40px 30px 30px 30px;
-            scrollbar-color: rgb(0, 0, 50) rgb(0, 0, 85);
-            scrollbar-width: thin;
-        }
-
-        .box-container {
-            display: flex;
-            justify-content: space-between;
-            gap: 20px;
-        }
-
-        .box {
-            height: 90%;
-            box-shadow: 3px 3px 10px rgba(0, 30, 87, 0.751);
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: space-around;
-            width: 40%;
-        }
-
-        .box img {
-            width: 100px;
-            height: 100px;
-        }
-
-        .text {
-            text-align: center;
-        }
-
-        form {
-            width: 100%;
-            padding: 12px 20px;
-            margin: 8px 0;
-            display: inline-block;
-            border: 1px solid #ccc;
-            box-sizing: border-box;
-        }
-
-        form p {
-            margin-bottom: 8px;
-        }
-
-        .submitButton {
-            background-color: #112A46;
-            color: white;
-            border: none;
-            padding: 10px;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        /* Add more inline styles for consistency */
-    </style>
+  <meta charset="UTF-8" />
+  <title>Sign In | Carpool</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Sign in to your Carpool account." />
+  <link rel="icon" href="favicon.png">
+  <link rel="stylesheet" href="/static/styleform.css" />
 </head>
 
 <body>
+  <nav>
+    <ul>
+      <li>
+        <a class="links" href="{{ url_for ('views.home')}}">Home</a></li>
+      <li>
+        <a class="button" href="{{ url_for ('views.signin')}}">Login</a>
+      </li>
+    </ul>
+  </nav>
 
-	<!-- for header part -->
-	<header>
-
-		<div class="logosec">
-			<div class="logo">Company Dashboard</div>
-			<img src=
-"https://media.geeksforgeeks.org/wp-content/uploads/20221210182541/Untitled-design-(30).png"
-				class="icn menuicn"
-				id="menuicn"
-				alt="menu-icon">
-		</div>
-
-		<div>
-			<h1>Customize Profile</h1>
-		</div>
-
-		<div class="message">
-			<div class="circle"></div>
-			<img src=
-"https://media.geeksforgeeks.org/wp-content/uploads/20221210183322/8.png"
-				class="icn"
-				alt="">
-			<div class="dp">
-			<img src=
-"https://media.geeksforgeeks.org/wp-content/uploads/20221210180014/profile-removebg-preview.png"
-					class="dpicn"
-					alt="dp">
-			</div>
-		</div>
-
-	</header>
-
-	<div class="main-container">
-		<div class="navcontainer">
-			<nav class="nav">
-				<div class="nav-upper-options">
-					<div class="nav-option option5">
-						<img src=
-"https://media.geeksforgeeks.org/wp-content/uploads/20221210182148/Untitled-design-(29).png"
-							class="nav-img"
-							alt="dashboard">
-						<a class="button" id ="side_nav" href="{{ url_for ('views.dashboard')}}"><h3>Dashboard</h3></a>
-					</div>
-
-					<div class="nav-option option4">
-						<img src=
-"https://media.geeksforgeeks.org/wp-content/uploads/20221210183321/6.png"
-							class="nav-img"
-							alt="institution">
-							<a class="button" id ="side_nav" href="{{ url_for ('views.my_institution')}}"><h3>Institution</h3></a>
-					</div>
-
-					<div class="nav-option option1">
-						<img src=
-"https://media.geeksforgeeks.org/wp-content/uploads/20221210183323/10.png"
-							class="nav-img"
-							alt="blog">
-                        <h3>Profile</h3>
-					</div>
-
-					<div class="nav-option option6">
-						<img src=
-"https://media.geeksforgeeks.org/wp-content/uploads/20221210183320/4.png"
-							class="nav-img"
-							alt="settings">
-                        <a class="button" id ="side_nav" href="{{ url_for ('views.settings')}}"><h3>Settings</h3></a>
-					</div>
-
-					<div class="nav-option logout">
-                        
-						<img src=
-"https://media.geeksforgeeks.org/wp-content/uploads/20221210183321/7.png"
-							class="nav-img" href="{{ url_for('views.logout')}}"
-							alt="logout">
-						<h3></h3>
-                        <a class="button" id ="side_nav" href="{{ url_for ('views.logout')}}"><h3>Logout</h3></a>
-					</div>
-
-				</div>
-			</nav>
-		</div>
-		<div class="main">
-
-			
-
-			<div class="box-container">
-
-				<div class="box box1" style="width: 20%; height: 90%;">
-					<div class="text">
-						<div class="column left"><img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210180014/profile-removebg-preview.png" style="width:100px;height:100px;">
-							<h4 class="text-right">Profile Info</h4>
-						</div>
-						{% block content %}
-							{% for cell in data %}
-							<tr>
-								<td>{{cell}}</td>
-							</tr>
-							{% endfor %}
-						</table>
-						{% endblock %}
-							
-						<div>
-
-						</div>
-					</div>
-
-				</div>
-
-				<div class="box box2" style="width: 60%; height: 90%;">
-					<div class="text">
-						<form action="#" method="POST" style="width: 100%;padding: 12px 20px;margin: 8px 0;display: inline-block;border: 1px solid #ccc;box-sizing: border-box;">
-							<p>Name</p>
-							<p><input type="text" placeholder="Enter First Name" name="nam"/></p>
-							<p>Name</p>
-							<p><input type="text" placeholder="Enter Last Name" name="nam"/></p>
-							<p>Telephone</p>
-							<p><input type="text" placeholder="Enter Telephone" name="tel"/></p>
-							<p>Email address</p>
-							<p><input type="email" placeholder="Enter Email" name="eml"/></p>
-							<p>Area of residence</p>
-							<p><input type="text" placeholder="Can just be preferred area to carpool" name="res"/></p>
-							
-							<p><input class="submitButton" type="submit"/></p>
-						</form>
-					</div>
-
-					<div class="box box1" style="width: 40%; height: 90%;">
-						<div class="text">
-							<div class="column left"><img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210180014/profile-removebg-preview.png" style="width:100px;height:100px;">
-								<h4 class="text-right">Profile Settings</h4>
-							</div>
-					</div>
-
-				</div>
-
-			<!-- <div class="box-container">
-                <div class="row">
-                    <div class="column left"><img src="assets/avatarplaceholder.png" style="width:100px;height:100px;">
-                        <h4 class="text-right">Profile Settings</h4>
-                    </div>
-                    <div class="column right">
-                        <div>
-                            <form action="#" method="POST">
-                                <p>Name</p>
-                                <p><input type="text" placeholder="Enter First Name" name="nam"/></p>
-								<p>Name</p>
-                                <p><input type="text" placeholder="Enter Last Name" name="nam"/></p>
-                                <p>Telephone</p>
-                                <p><input type="text" placeholder="Enter Telephone" name="tel"/></p>
-                                <p>Email address</p>
-                                <p><input type="email" placeholder="Enter Email" name="eml"/></p>
-                                <p>Area of residence</p>
-                                <p><input type="text" placeholder="Can just be preferred area to carpool" name="res"/></p>
-                                
-                                <p><input class="submitButton" type="submit"/>Login</p>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-			</div> -->
-            <style>
-                .row {
-                display: flex;
-                }
-
-                .column {
-                flex: 50%;
-                }
-            </style>
-	    </div>
+  <div class="signin-container">
+    <h1>Sign in to your account</h1>
+    <div class="form-container">
+      <form action="#" method="POST">
+        <div class="input-group">
+          <label for="username">Username:</label>
+          <input type="text" id="username" placeholder="Enter Username" name="nm" required />
+        </div>
+        <div class="input-group">
+          <label for="password">Password:</label>
+          <input type="password" id="password" placeholder="Enter Password" name="psw" required />
+        </div>
+        <div class="input-group">
+          <input class="submitButton" type="submit" value="Login" />
+        </div>
+      </form>
+      <p class="signup-link"><a href="/login">Don't have an account? Sign up</a></p>
     </div>
 
-	<script src="./index.js"></script>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+    <ul class="flashes">
+      {% for category, message in messages %}
+      <li class="{{ category }}">{{ message }}</li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+    {% endwith %}
+  </div>
 </body>
-</html>
 
+</html>
