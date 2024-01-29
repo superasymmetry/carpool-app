@@ -13,7 +13,152 @@
 	<!-- <link rel="stylesheet"
 		href="responsive.css"> -->
     <script src="/static/dashboard.js" defer></script>
-    
+    <style>
+        /* Add inline styles here for consistency with previous pages */
+        body {
+            background-color: #cad7fda4;
+            max-width: 100%;
+            overflow-x: hidden;
+            font-family: "Poppins", sans-serif;
+            font-weight: 300;
+        }
+
+        header {
+            background-color: #112A46;
+            height: 70px;
+            width: 100vw;
+            padding: 0 30px;
+            position: fixed;
+            z-index: 100;
+            box-shadow: 1px 1px 15px rgba(161, 182, 253, 0.825);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 27px;
+            font-weight: 600;
+            color: #fff;
+        }
+
+        .icn {
+            height: 30px;
+        }
+
+        .menuicn {
+            cursor: pointer;
+        }
+
+        .logosec {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+        }
+
+        .message {
+            gap: 40px;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .circle {
+            height: 7px;
+            width: 7px;
+            position: absolute;
+            background-color: #fa7bb4;
+            border-radius: 50%;
+            left: 19px;
+            top: 8px;
+        }
+
+        .dp {
+            height: 40px;
+            width: 40px;
+            background-color: #626262;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .main-container {
+            display: flex;
+            width: 100vw;
+            position: relative;
+            top: 70px;
+            z-index: 1;
+        }
+
+        .main {
+            height: calc(100vh - 70px);
+            width: 100%;
+            overflow-y: scroll;
+            overflow-x: hidden;
+            padding: 40px 30px 30px 30px;
+            scrollbar-color: rgb(0, 0, 50) rgb(0, 0, 85);
+            scrollbar-width: thin;
+        }
+
+        .box-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .box {
+            height: 90%;
+            box-shadow: 3px 3px 10px rgba(0, 30, 87, 0.751);
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+            width: 30%; /* Adjusted width */
+        }
+
+        .box img {
+            width: 70px;
+            height: 70px;
+        }
+
+        .text {
+            text-align: center;
+        }
+
+        .topic-heading {
+            font-size: 20px;
+        }
+
+        .topic {
+            font-size: 16px;
+        }
+
+        form {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+
+        form p {
+            margin-bottom: 8px;
+        }
+
+        .submitButton {
+            background-color: #112A46;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        /* Add more inline styles for consistency */
+    </style>
 </head>
 
 <body>
@@ -22,7 +167,7 @@
 	<header>
 
 		<div class="logosec">
-			<div class="logo">Appleby Carpool</div>
+			<div class="logo">Company Dashboard</div>
 			<img src=
 "https://media.geeksforgeeks.org/wp-content/uploads/20221210182541/Untitled-design-(30).png"
 				class="icn menuicn"
@@ -31,7 +176,7 @@
 		</div>
 		{% block content %}
 		<div>
-			<h1>Hello {{user}}, welcome back!</h1>
+			<h1 style = "background-color: #fff;">Hello {{user}}, welcome back!</h1>
 		</div>
 		{% endblock %}
 		<div class="message">
@@ -113,12 +258,12 @@
 				</div>
 			</div>
 
+			<h1>Quick Links</h1>
 			<div class="box-container">
-
 				<div class="box box1">
 					<div class="text">
-						<h2 class="topic-heading">60.5k</h2>
-						<h2 class="topic">Kilometers Carpooled</h2>
+						<h2 class="topic-heading">1</h2>
+						<h2 class="topic">View my Calendar</h2>
 					</div>
 
 					<img src=
@@ -128,8 +273,8 @@
 
 				<div class="box box2">
 					<div class="text">
-						<h2 class="topic-heading">150</h2>
-						<h2 class="topic">Days Carpooled</h2>
+						<h2 class="topic-heading">2</h2>
+						<h2 class="topic">Make an appointment</h2>
 					</div>
 
 					<img src=
@@ -139,8 +284,8 @@
 
 				<div class="box box3">
 					<div class="text">
-						<h2 class="topic-heading">320</h2>
-						<h2 class="topic">Dollars of Gas Saved</h2>
+						<h2 class="topic-heading">3</h2>
+						<h2 class="topic">Find a carpool buddy</h2>
 					</div>
 
 					<img src=
@@ -148,6 +293,11 @@
 						alt="comments">
 				</div>
 
+
+			
+
+
+			</div>
 
 			<div class="report-container">
 				<div class="report-header">Availability Calendar</h1>
@@ -185,17 +335,11 @@
 			<label for="day3"> Thursday</label><br>
 			<input type="checkbox" id="day3" name="d" value="Wednesday">
 			<label for="day3"> Friday</label><br>
-      		<p><input class="submitButton" type="submit"/>Save</p>
+      		<p><input class="submitButton" type="submit"/></p>
 		</form>
   
 		</div>
 	  </div>
-
-
-
-
-
-			</div>
 		</div>
 	</div>
 
