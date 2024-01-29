@@ -1,348 +1,89 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+  <head>
+    
+    <title>Appleby Carpool</title>
+    <meta charset="utf-8" />
+	  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-<head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible"
-		content="IE=edge">
-	<meta name="viewport"
-		content="width=device-width,
-				initial-scale=1.0">
-	<title>Dashboard</title>
-	<link rel="stylesheet" href="/static/style.css">
-	<!-- <link rel="stylesheet"
-		href="responsive.css"> -->
-    <script src="/static/dashboard.js" defer></script>
-    <style>
-        /* Add inline styles here for consistency with previous pages */
-        body {
-            background-color: #cad7fda4;
-            max-width: 100%;
-            overflow-x: hidden;
-            font-family: "Poppins", sans-serif;
-            font-weight: 300;
-        }
+	  <link rel="stylesheet" href="/static/stylehomepage.css" />
 
-        header {
-            background-color: #112A46;
-            height: 70px;
-            width: 100vw;
-            padding: 0 30px;
-            position: fixed;
-            z-index: 100;
-            box-shadow: 1px 1px 15px rgba(161, 182, 253, 0.825);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+	  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="/script.js" defer></script>
 
-        .logo {
-            font-size: 27px;
-            font-weight: 600;
-            color: #fff;
-        }
+  </head>
 
-        .icn {
-            height: 30px;
-        }
+  <body>
+    <nav>
+      <ul>
+        <li>
+          <a class="links" href="{{ url_for ('views.home')}}">Home</a></li>
+        <li>
+          <a class="button" href="{{ url_for ('views.signin')}}">Login</a>
+        </li>
+      </ul>
+    </nav>
 
-        .menuicn {
-            cursor: pointer;
-        }
+    <section class="landing">
+        <div class="landing-content">
+            <h1>Carpooling,</h1>
+            <h1>Reimagined.</h1>
+            <p>Here, we contribute to the environment by helping you reduce your carbon footprint from transportation.</p>
+            <a class="button1" href="{{ url_for ('views.login')}}">Try Demo</a>
+        </div>
+    </section>
 
-        .logosec {
-            display: flex;
-            align-items: center;
-            gap: 60px;
-        }
+    <section class="about-section">
+        <h2 class="section-title">About Our App</h2>
+        <div class="about-content">
+            <div class="about-info">
+                <div class="icon-text">
+                    <ion-icon name="car"></ion-icon>
+                    <h3>Convenient Ride Sharing</h3>
+                </div>
+                <p>Our app provides a seamless platform for users to find and share rides, making commuting more convenient and cost-effective. With advanced search and matching algorithms, users can easily connect with compatible carpool partners.</p>
+            </div>
+            <img src="https://img.freepik.com/free-vector/carpool-concept-illustration_114360-9919.jpg?size=626&ext=jpg&ga=GA1.1.1546980028.1704240000&semt=sph" alt="Convenient Ride Sharing" class="about-image">
+        </div>
+    </section>
 
-        .message {
-            gap: 40px;
-            position: relative;
-            cursor: pointer;
-        }
+    <section class="about-section">
+        <div class="about-content">
+            <div class="about-info">
+                <div class="icon-text">
+                    <ion-icon name="earth"></ion-icon>
+                    <h3>Environment-Friendly</h3>
+                </div>
+                <p>We are committed to promoting eco-friendly transportation solutions. By encouraging carpooling, we aim to reduce traffic congestion and lower carbon emissions. Our app provides real-time environmental impact metrics, allowing users to track their contributions to sustainability.</p>
+            </div>
+            <img src="https://img.freepik.com/free-vector/flat-dedsign-innovation-concept-illustrated_23-2149151731.jpg?size=626&ext=jpg&ga=GA1.1.1546980028.1703116800&semt=ais" alt="Environment Friendly" class="about-image">
+        </div>
+    </section>
+        
+  <footer class="footer">
+    <div class="waves">
+      <div class="wave" id="wave1"></div>
+      <div class="wave" id="wave2"></div>
+      <div class="wave" id="wave3"></div>
+      <div class="wave" id="wave4"></div>
+    </div>
 
-        .circle {
-            height: 7px;
-            width: 7px;
-            position: absolute;
-            background-color: #fa7bb4;
-            border-radius: 50%;
-            left: 19px;
-            top: 8px;
-        }
+    <ul class="menu">
+      <li class="menu__item"><a class="menu__link" href="#">Home</a></li>
+      <li class="menu__item"><a class="menu__link" href="#">About</a></li>
+      <li class="menu__item"><a class="menu__link" href="#">Services</a></li>
+      <li class="menu__item"><a class="menu__link" href="#">Team</a></li>
+      <li class="menu__item"><a class="menu__link" href="#">Contact</a></li>
 
-        .dp {
-            height: 40px;
-            width: 40px;
-            background-color: #626262;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-        }
+    </ul>
+    <p1>&copy;2023 by Binder. All rights reserved.</p1>
+  </footer>
 
-        .main-container {
-            display: flex;
-            width: 100vw;
-            position: relative;
-            top: 70px;
-            z-index: 1;
-        }
-
-        .main {
-            height: calc(100vh - 70px);
-            width: 100%;
-            overflow-y: scroll;
-            overflow-x: hidden;
-            padding: 40px 30px 30px 30px;
-            scrollbar-color: rgb(0, 0, 50) rgb(0, 0, 85);
-            scrollbar-width: thin;
-        }
-
-        .box-container {
-            display: flex;
-            justify-content: space-between;
-            gap: 20px;
-        }
-
-        .box {
-            height: 90%;
-            box-shadow: 3px 3px 10px rgba(0, 30, 87, 0.751);
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: space-around;
-            width: 30%; /* Adjusted width */
-        }
-
-        .box img {
-            width: 70px;
-            height: 70px;
-        }
-
-        .text {
-            text-align: center;
-        }
-
-        .topic-heading {
-            font-size: 20px;
-        }
-
-        .topic {
-            font-size: 16px;
-        }
-
-        form {
-            width: 100%;
-            padding: 12px 20px;
-            margin: 8px 0;
-            display: inline-block;
-            border: 1px solid #ccc;
-            box-sizing: border-box;
-        }
-
-        form p {
-            margin-bottom: 8px;
-        }
-
-        .submitButton {
-            background-color: #112A46;
-            color: white;
-            border: none;
-            padding: 10px;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        /* Add more inline styles for consistency */
-    </style>
-</head>
-
-<body>
-
-	<!-- for header part -->
-	<header>
-
-		<div class="logosec">
-			<div class="logo">Company Dashboard</div>
-			<img src=
-"https://media.geeksforgeeks.org/wp-content/uploads/20221210182541/Untitled-design-(30).png"
-				class="icn menuicn"
-				id="menuicn"
-				alt="menu-icon">
-		</div>
-		{% block content %}
-		<div>
-			<h1 style = "background-color: #fff;">Hello {{user}}, welcome back!</h1>
-		</div>
-		{% endblock %}
-		<div class="message">
-			<div class="circle"></div>
-			<img src=
-"/assets/avatarplaceholder.png"
-				class="icn"
-				alt="">
-			<div class="dp">
-			<img src=
-"https://media.geeksforgeeks.org/wp-content/uploads/20221210180014/profile-removebg-preview.png"
-					class="dpicn"
-					alt="dp">
-			</div>
-		</div>
-
-	</header>
-
-	<div class="main-container">
-		<div class="navcontainer">
-			<nav class="nav">
-				<div class="nav-upper-options">
-					<div class="nav-option option1">
-						<img src=
-"https://media.geeksforgeeks.org/wp-content/uploads/20221210182148/Untitled-design-(29).png"
-							class="nav-img"
-							alt="dashboard">
-						<h3> Dashboard</h3>
-					</div>
-
-					<div class="nav-option option4">
-						<img src=
-"https://media.geeksforgeeks.org/wp-content/uploads/20221210183321/6.png"
-							class="nav-img"
-							alt="institution">
-							<a class="button" id ="side_nav" href="{{ url_for ('views.my_institution')}}"><h3>  Institution</h3></a>
-					</div>
-
-					<div class="nav-option option5">
-						<img src=
-"https://media.geeksforgeeks.org/wp-content/uploads/20221210183323/10.png"
-							class="nav-img"
-							alt="blog">
-                        <a class="button" id ="side_nav" href="{{ url_for ('views.editProfile')}}"><h3>  Profile</h3></a>
-					</div>
-
-					<div class="nav-option option6">
-						<img src=
-"https://media.geeksforgeeks.org/wp-content/uploads/20221210183320/4.png"
-							class="nav-img"
-							alt="settings">
-                        <a class="button" id ="side_nav" href="{{ url_for ('views.settings')}}"><h3>  Settings</h3></a>
-					</div>
-
-					<div class="nav-option logout">
-                        
-						<img src=
-"https://media.geeksforgeeks.org/wp-content/uploads/20221210183321/7.png"
-							class="nav-img" href="{{ url_for('views.logout')}}"
-							alt="logout">
-                        <a class="button" id ="side_nav" href="{{ url_for ('views.logout')}}"><h3>  Logout</h3></a>
-					</div>
-
-				</div>
-			</nav>
-		</div>
-		<div class="main">
-
-			<div class="searchbar2">
-				<input type="text"
-					name=""
-					id=""
-					placeholder="Search">
-				<div class="searchbtn">
-				<img src=
-"https://media.geeksforgeeks.org/wp-content/uploads/20221210180758/Untitled-design-(28).png"
-						class="icn srchicn"
-						alt="search-button">
-				</div>
-			</div>
-
-			<h1>Quick Links</h1>
-			<div class="box-container">
-				<div class="box box1">
-					<div class="text">
-						<h2 class="topic-heading">1</h2>
-						<h2 class="topic">View my Calendar</h2>
-					</div>
-
-					<img src=
-"https://media.geeksforgeeks.org/wp-content/uploads/20221210184645/Untitled-design-(31).png"
-						alt="Views">
-				</div>
-
-				<div class="box box2">
-					<div class="text">
-						<h2 class="topic-heading">2</h2>
-						<h2 class="topic">Make an appointment</h2>
-					</div>
-
-					<img src=
-"https://media.geeksforgeeks.org/wp-content/uploads/20221210185030/14.png"
-						alt="likes">
-				</div>
-
-				<div class="box box3">
-					<div class="text">
-						<h2 class="topic-heading">3</h2>
-						<h2 class="topic">Find a carpool buddy</h2>
-					</div>
-
-					<img src=
-"https://media.geeksforgeeks.org/wp-content/uploads/20221210184645/Untitled-design-(32).png"
-						alt="comments">
-				</div>
-
-
-			
-
-
-			</div>
-
-			<div class="report-container">
-				<div class="report-header">Availability Calendar</h1>
-					<!-- <button class="view">View All</button> -->
-				</div>
-
-        <!-- table columns -->
-				  <!-- inspired by http://colorhunt.co/c/8184 and 
-    https://dribbble.com/shots/2407357-Calendar%60 -->
-
-    <div class="container">
-		<div class="calendar">
-			<div>
-				<!-- google maps embed -->
-			</div>
-			
-		
-		  <div class="back">
-			<!-- <form action="#" method="GET">
-				<p>Add a date</p>
-				<p><input type="text" name="dt"/></p>
-				<p><input class="submitButton" type="submit"/>Login</p>
-			</form> -->
-		  </div>
-
-		  <form action="#" method="POST">
-			<p>Date</p>
-			<input type="checkbox" id="day1" name="d" value="Monday">
-			<label for="day1"> Monday</label><br>
-			<input type="checkbox" id="day2" name="d" value="Tuesday">
-			<label for="day2"> Tuesday</label><br>
-			<input type="checkbox" id="day3" name="d" value="Wednesday">
-			<label for="day3"> Wednesday</label><br>
-			<input type="checkbox" id="day3" name="d" value="Wednesday">
-			<label for="day3"> Thursday</label><br>
-			<input type="checkbox" id="day3" name="d" value="Wednesday">
-			<label for="day3"> Friday</label><br>
-      		<p><input class="submitButton" type="submit"/></p>
-		</form>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
   
-		</div>
-	  </div>
-		</div>
-	</div>
-
-	<script src="./index.js"></script>
-</body>
+  </body>
 </html>
